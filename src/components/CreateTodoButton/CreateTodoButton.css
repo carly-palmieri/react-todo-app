@@ -1,0 +1,29 @@
+.CreateTodoButton {
+    background-color: #ffffffb4;
+    border-radius: 8px;
+    font-size: 30px;
+    border: none;
+    height: 40px;
+    padding: 30px 20px;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.Icon-Plus {
+    color: #070216;
+    transition-duration: 300ms;
+
+}
+
+.Icon-Plus--open {
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition-duration: 300ms;
+}

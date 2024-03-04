@@ -1,0 +1,56 @@
+.LoadingTodo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    position: relative;
+    padding: 10px;
+    height: 50px;
+}
+
+.LoadingTodo {
+    background-size: 300% !important;
+    background: linear-gradient(150deg, #050013 0%, #403c4b 50%);    
+    animation: loading-gradient 1s  linear infinite;
+}
+
+.LoadingTodo-Check, 
+.LoadingTodo-Delete,
+.LoadingTodo-Text {
+    background-color: #4e4a58;
+}
+
+.LoadingTodo-Text {
+    height: 18px;
+    width: 40%;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.LoadingTodo-Check {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.LoadingTodo-Delete {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+
+
+@keyframes loading-gradient {
+    0% {
+        background-position-x: 0%;
+    }
+    50% {
+        background-position-x: 50%;
+    }
+    100% {
+        background-position-x: 0%;
+    }
+}
