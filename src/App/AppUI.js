@@ -9,6 +9,7 @@ import { TodoForm } from '../components/TodoForm';
 import { TodoContext } from '../context/TodoContext'
 import React from 'react'
 import { Modal } from '../components/Modal'
+import { TodoEmptyState } from '../components/TodoEmptyState'
 
 function AppUI() {
     const {
@@ -18,7 +19,7 @@ function AppUI() {
         loading,
         error,
         openModal,
-        setOpenModal
+        totalTodos
     } = React.useContext(TodoContext)
 
     return (
@@ -36,7 +37,15 @@ function AppUI() {
 
                         }
                         {error && <TodosError/>}
-                        {!loading && !error && todosResults.length === 0 && <p>Crea tu primer todo!</p>}
+                        {!loading && 
+                        !error && 
+                        todosResults.length === 0 && 
+                        <TodoEmptyState message={
+                            totalTodos === 0 ? 
+                            'Crea tu primer TODO' :
+                            'No se encontraron coincidencias'
+                        }/>
+                        }
                         {todosResults.map(todo => (
                             <TodoItem 
                             text={todo.text} 
