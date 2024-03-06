@@ -1,7 +1,5 @@
 # React TODO app
 
-¡Hola, Platzinauta!
-
 En este repositorio encontrarás el código de una aplicacion básica de React para gestionar TODOS. Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
 
 ## Getting Started with Create React App
