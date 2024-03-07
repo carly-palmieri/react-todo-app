@@ -1,7 +1,7 @@
 .TodoItem {
     display: flex;
     align-items: center;
-    background-color: rgba(232, 252, 255, 0.096);
+    background-color: rgba(232, 252, 255, 0.192);
     margin-bottom: 10px;
     max-width: 100%;
     border-radius: 4px;

@@ -1,10 +1,8 @@
 import React from 'react';
-import { TodoContext } from '../../context/TodoContext';
 import './CreateTodoButton.css'
 import { FaPlus } from "react-icons/fa";
 
-function CreateTodoButton() {
-    const {openModal, setOpenModal} = React.useContext(TodoContext)
+function CreateTodoButton({openModal, setOpenModal}) {
     return(
         <button className="CreateTodoButton" onClick={(event) => {
             setOpenModal(!openModal);

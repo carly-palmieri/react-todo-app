@@ -5,7 +5,7 @@ function TodoEmptyState({message}) {
     return(
       <div className='TodoEmptyState'>
         <h2>{message}</h2>
-        <img src={emptyState}></img>
+        <img alt="empty state" src={emptyState}></img>
       </div>
     );
 }
