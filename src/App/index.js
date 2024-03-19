@@ -11,6 +11,7 @@ import { Modal } from '../components/Modal'
 import { TodoEmptyState } from '../components/TodoEmptyState'
 import { TodoHeader } from '../components/TodoHeader'
 import { useTodos } from './useTodos';
+import './App.css'
 
 function App() {
   const {
@@ -28,31 +29,24 @@ function App() {
     addTodo
   } = useTodos()
   return (
-    <>  
-        <TodoHeader>
+    <div className='App'>  
+        <TodoHeader loading={loading}>
             <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos}/>
             <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
         </TodoHeader>
-        <TodoList>
-            {loading && 
-                <>
-                    <TodosLoading/>
-                    <TodosLoading/>
-                    <TodosLoading/>
-                </>
-
-            }
-            {error && <TodosError/>}
-            {!loading && 
-            !error && 
-            todosResults.length === 0 && 
-            <TodoEmptyState message={
-                totalTodos === 0 ? 
-                'Crea tu primer TODO' :
-                'No se encontraron coincidencias'
-            }/>
-            }
-            {todosResults.map(todo => (
+        <TodoList
+            error={error}
+            onError={() => <TodosError/>}
+            loading={loading}
+            onLoading={() => <TodosLoading/>}
+            todosResults={todosResults}
+            onEmpty={() => <TodoEmptyState message='Crea tu primer TODO'/>}
+            totalTodos={totalTodos}
+            searchValue={searchValue}
+            onNoResults={(search) => (<TodoEmptyState message={
+                'No se encontraron coincidencias para ' + search
+            }/>)}
+            render={(todo) => (
                 <TodoItem 
                 text={todo.text} 
                 completed={todo.completed} 
@@ -60,7 +54,8 @@ function App() {
                 completeTodo={completeTodo}
                 deleteTodo={deleteTodo}
                 />
-            ))}
+            )}
+        >
         </TodoList>
         <CreateTodoButton openModal={openModal} setOpenModal={setOpenModal}/>
         { openModal && 
@@ -70,7 +65,7 @@ function App() {
                   addTodo={addTodo}/>
             </Modal>
         }
-    </>
+    </div>
 )
 }
 
