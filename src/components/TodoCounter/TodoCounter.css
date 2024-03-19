@@ -10,3 +10,7 @@ h1 {
 h1 span {
     font-weight: 800;
 }
+
+h1.disabled {
+    opacity: 60%;
+}

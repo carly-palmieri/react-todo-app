@@ -17,3 +17,7 @@ input:focus-visible {
 input::placeholder {
     color:#b8b8b8
 }
+
+input:disabled {
+    opacity: 60%;
+}

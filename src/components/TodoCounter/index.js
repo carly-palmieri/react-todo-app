@@ -2,26 +2,26 @@ import React from 'react';
 import './TodoCounter.css'
 
 function TodoCounter({completedTodos, 
-  totalTodos}) {
+  totalTodos, loading}) {
 
   let content;
   if(totalTodos !== completedTodos) {
-    content = <h1>
+    content = <>
       Completaste <span>{completedTodos}</span> de <span>{totalTodos}</span> Todos
-    </h1>
+    </>
   } else if (totalTodos === 0) {
-    content = <h1>
+    content = <>
     Aún no agregaste Todos
-    </h1>
+    </>
   } else {
-    content = <h1>
+    content = <>
     Completaste todos los Todos!!
-    </h1>
+    </>
   }
     return(
-      <>
+      <h1 className={loading ? 'disabled' : ''}>
         {content}
-      </>
+      </h1>
     );
 }
 
