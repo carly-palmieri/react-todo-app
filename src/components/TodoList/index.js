@@ -14,7 +14,7 @@ function TodoList(props) {
             }
             <ul className='TodoList'>
                 {props.loading && props.onLoading()}
-                {props.todosResults.map(props.render)}
+                {!props.loading && props.todosResults.map(props.render)}
             </ul>
         </section>
 

@@ -12,6 +12,7 @@ import { TodoEmptyState } from '../components/TodoEmptyState'
 import { TodoHeader } from '../components/TodoHeader'
 import { useTodos } from './useTodos';
 import './App.css'
+import { ChangeAlertWithStorageListener } from '../components/ChangeAlert';
 
 function App() {
   const {
@@ -26,8 +27,9 @@ function App() {
     error,
     openModal,
     setOpenModal,
-    addTodo
-  } = useTodos()
+    addTodo,
+    sincronizeItems
+  } = useTodos();
   return (
     <div className='App'>  
         <TodoHeader loading={loading}>
@@ -65,6 +67,7 @@ function App() {
                   addTodo={addTodo}/>
             </Modal>
         }
+        <ChangeAlertWithStorageListener sincronizeItems={sincronizeItems}/>
     </div>
 )
 }
