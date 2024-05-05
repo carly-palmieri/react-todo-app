@@ -2,12 +2,12 @@ import React from 'react';
 import './CreateTodoButton.css'
 import { FaPlus } from "react-icons/fa";
 
-function CreateTodoButton({openModal, setOpenModal}) {
+function CreateTodoButton({onClick}) {
     return(
-        <button className="CreateTodoButton" onClick={(event) => {
-            setOpenModal(!openModal);
+        <button className="CreateTodoButton" onClick={() => {
+            onClick();
         }}>
-            <FaPlus className={`Icon Icon-Plus ${openModal ? 'Icon-Plus--open' : ''}`}/>
+            <FaPlus className={"Icon Icon-Plus"}/>
         </button>
     );
 }

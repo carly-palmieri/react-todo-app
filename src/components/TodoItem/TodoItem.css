@@ -31,15 +31,27 @@
     color: rgb(55, 173, 55)   
 }
 
-.Icon-Delete {
+.Icon-Delete, .Icon-Edit {
     position: absolute;
-    right: 10px;
     top: 8px;
-    font-size: 25px;
 }
 
-.TodoItem .Icon-Delete {
+.Icon-Delete {
+    font-size: 25px;
+    right: 10px;
+}
+
+.Icon-Edit {
+    right: 48px;
+    font-size: 20px;
+}
+
+.TodoItem .Icon-Delete, .TodoItem .Icon-Edit {
     color: rgb(113, 107, 145);
+}
+
+.Icon-Edit:hover {
+    color: rgb(62, 167, 209);
 }
 
 .Icon-Delete:hover {

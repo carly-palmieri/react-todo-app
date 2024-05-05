@@ -4,10 +4,9 @@
     width: 60%;
     max-width: 500px;
     align-items: center;
-    border: 1px solid #FFF;
     padding: 30px; 
     border-radius: 4px;
-    background-color: #241a41;
+    margin-top: 50px;
 }
 
 .TodoForm label {
