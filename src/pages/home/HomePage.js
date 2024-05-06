@@ -51,7 +51,12 @@ function HomePage() {
                 id={todo.id}
                 completed={todo.completed} 
                 key={todo.id}
-                editTodo={() => {navigate('/edit/' + todo.id)}}
+                editTodo={() => {navigate(
+                    '/edit/' + todo.id, 
+                    {
+                        state: {todo}
+                    }
+                )}}
                 completeTodo={() => {completeTodo(todo.id)}}
                 deleteTodo={() => {deleteTodo(todo.id)}}
                 />

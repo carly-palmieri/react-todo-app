@@ -4,16 +4,16 @@ import { useNavigate } from "react-router-dom";
 
 
 function TodoForm({
-    submitEvent, title, buttonLabel
+    submitEvent, title, buttonLabel, defaultText
 }) {
     const navigate = useNavigate()
-    const [newTodoValue, setNewTodoValue] = React.useState(false);
+    const [newTodoValue, setNewTodoValue] = React.useState(defaultText || '');
     const onSubmit = (event) => {
         event.preventDefault();
         submitEvent(newTodoValue);
         navigate('/');
     }
-    const onCancel = (event) => {
+    const onCancel = () => {
         navigate('/');
     }
     const onChange = (event) => {
@@ -24,6 +24,7 @@ function TodoForm({
             <label>{title}</label>
             <textarea
                 placeholder="Ir al supermercado..."
+                value={newTodoValue}
                 onChange={onChange}
             />
             <div className="TodoForm-buttonSection">
